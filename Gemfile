@@ -34,6 +34,8 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#D3.js
+gem 'd3js-rails', '~> 3.1.6'
 
 group :development, :test do
 gem 'rspec-rails', '~> 3.0.0'
