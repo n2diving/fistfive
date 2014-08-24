@@ -1,4 +1,4 @@
-class Fist < ActiveRecord::Base
+class Rating < ActiveRecord::Base
   belongs_to :student
   belongs_to :lesson
 end
