@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
   belongs_to :instructor
-  has_many :fists
-  has_many :students, through: :fists
+  has_many :ratings
+  has_many :students, through: :ratings
 end
