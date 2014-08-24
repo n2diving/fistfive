@@ -16,28 +16,28 @@ ActiveRecord::Schema.define(version: 20140821023404) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "fists", force: true do |t|
-    t.boolean  "is_anonymous"
-    t.integer  "num_fingers"
-    t.text     "comment"
-    t.integer  "student_id"
-    t.integer  "lesson_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "fists", ["lesson_id"], name: "index_fists_on_lesson_id", using: :btree
-  add_index "fists", ["student_id"], name: "index_fists_on_student_id", using: :btree
-
   create_table "lessons", force: true do |t|
     t.string   "name"
-    t.datetime "start_time"
+    t.datetime "date"
+    t.string   "notes"
     t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "lessons", ["instructor_id"], name: "index_lessons_on_instructor_id", using: :btree
+
+  create_table "ratings", force: true do |t|
+    t.integer  "value"
+    t.text     "question"
+    t.integer  "student_id"
+    t.integer  "lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["lesson_id"], name: "index_ratings_on_lesson_id", using: :btree
+  add_index "ratings", ["student_id"], name: "index_ratings_on_student_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "type"
