@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+
 	def index
 	
 		  @lessons = Lesson.all
@@ -31,5 +32,6 @@ class LessonsController < ApplicationController
 
 	def destroy
 	end
+
 
 end
