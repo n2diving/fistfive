@@ -9,11 +9,11 @@ class InstructorsController < UsersController
   # end
 
   def edit
-    @user = User.where(params[:id]).first
+    @user = User.find(params[:id])
   end
 
   def show
-    @user = User.where(params[:id]).first
+    @user = User.find(params[:id])
   end
 
   def destroy
@@ -23,7 +23,7 @@ class InstructorsController < UsersController
   end
 
   def update
-    @user = User.where(params[:id]).first
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to users_path
     else
