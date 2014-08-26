@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    @session = User.new
+    @user = User.new
+    @is_login = true
+    if current_user
+      redirect_to users_path
+    end
   end
 
   def create
@@ -8,17 +12,17 @@ class SessionsController < ApplicationController
     if user.authenticate(params[:user][:password])
       session[:user_id] = user.id.to_s
       if user.type == "Student"
-        redirect_to not_as_awesome_path
+        redirect_to students_path
       else
-        redirect_to somewhere_awesomeness_path
+        redirect_to instructors_path
       end
     else
-      redirect_to where_the_bear_sleeps_path
+      redirect_to new_session_path
     end
   end
 
   def destroy
     reset_session
-    redirect_to really_not_awesome_path
+    redirect_to root_path
   end
 end
