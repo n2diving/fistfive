@@ -10,9 +10,8 @@ class LessonsController < ApplicationController
 
 	def show
 		@lesson = Lesson.find(params[:id])
-
 		#to pass values back to view
-		gon.jbuilder
+		# gon.jbuilder
 
 	end
 
