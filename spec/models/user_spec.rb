@@ -1,29 +1,26 @@
 require "spec_helper"
 require "rails_helper"
-# require "users.rb"
+
 
 RSpec.describe User, :type => :model do
-  it "is invalid without a name" do 
-   giveitaname = User.new(name: "Hamilton", email:"abc@abc.com", password: "test", password_confirmation: "test")
-   expect(giveitaname).to be_valid
+	  it "is invalid without a name" do 
+	   giveitaname = User.new(email:"abc@abc.com", password: "test", password_confirmation: "test")
+	   expect(giveitaname).to be_invalid
 
-  end
+	  end
+	  describe "email" do 
+	  	
+		  it "is invalid without an email" do
+		  	userwithoutemail = User.new(name: "Hamilton", password: "test", password_confirmation: "test")
+		  	expect(userwithoutemail).to be_invalid
+		  end
 
+		  it "is a unique email" do
+		  	user1 = User.create!(name: "FRANKLIN", email: "a@a.com", password: "test", password_confirmation: "test")
+		  	user2 = User.new(name: "Hamilton", email: "a@a.com", password: "test", password_confirmation: "test")
+		  	expect(user1).to be_valid
+		  	expect(user2).to be_invalid
+		  end
+		end
 
-
-    # User.new.should be_an_instance_of(:user)
-    # (:type => "Student")
-    # u.type == "Student"
-
-
-
-  # it "should have a valid name"
-  # it "is invalid without unique email"
-  # it "should have valid password"
 end
-
-
-
-# RSpec.describe User, :type => :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
