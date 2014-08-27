@@ -18,10 +18,17 @@ class LessonsController < ApplicationController
 
 
 	def new
+		@lesson = Lesson.new
 
 	end
 
 	def create
+		@lesson = Lesson.new
+		if @lesson.save
+			redirect_to lesson_path
+		else 
+			render 'new'
+		end
 	end
 
 	def edit
