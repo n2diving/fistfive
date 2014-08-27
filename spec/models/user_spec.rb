@@ -1,13 +1,20 @@
-require 'rails_helper'
 require "spec_helper"
+require "rails_helper"
 # require "users.rb"
 
-Rspec.describe User do
-  it "should have a type" do
-    User.new.should be_an_instance_of(:user)
+RSpec.describe User, :type => :model do
+  it "is invalid without a name" do 
+   giveitaname = User.new(name: "Hamilton", email:"abc@abc.com", password: "test", password_confirmation: "test")
+   expect(giveitaname).to be_valid
+
+  end
+
+
+
+    # User.new.should be_an_instance_of(:user)
     # (:type => "Student")
     # u.type == "Student"
-  end
+
 
 
   # it "should have a valid name"
