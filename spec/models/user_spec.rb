@@ -9,7 +9,6 @@ RSpec.describe User, :type => :model do
 
 	  end
 	  describe "email" do 
-	  	
 		  it "is invalid without an email" do
 		  	userwithoutemail = User.new(name: "Hamilton", password: "test", password_confirmation: "test")
 		  	expect(userwithoutemail).to be_invalid
