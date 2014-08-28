@@ -9,7 +9,8 @@
 
 <li><h3><%= link_to s.name, lesson_path(s.id) %></h3> </li>
 	<ul>
-		<li> Instructor: <%= Instructor.find(s.instructor_id).name %> </li>
+		<li> Instructor: <%=Instructor.find(s.instructor_id).name %> </li>
+		<li> Student:</li>
 		<li> <%= link_to "edit", edit_lesson_path(s.id) %> | <%= link_to "delete", lesson_path(s.id), method: :delete %></li>
 	</ul>
 
