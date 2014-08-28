@@ -1,6 +1,6 @@
 <%= form_for @lesson do |f| %>
 <%= f.text_field :name, placeholder: "name" %>
-<p><%= f.check_box :is_active %> Active?</p>
+<p><%= f.check_box :is_active, {checked: true} %> Active?</p>
 <%= f.hidden_field( :instructor_id, value: current_user.id ) %>
 
 <%= f.submit %>
