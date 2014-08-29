@@ -1,0 +1,2 @@
+module DQueriesHelper
+end
