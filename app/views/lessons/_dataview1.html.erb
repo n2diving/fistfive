@@ -2,19 +2,9 @@
 <p>Data View</p>
 
 
-<svg id="ratings">
-  <rect></rect>
-</svg>
+
 <p>Count <%= @rating_count %> </p>
 <script>
-
-// var data = [{value: 0, books: 54},
-//             {value: 1, books: 43},
-//             {value: 2, books: 41},
-//             {value: 3, books: 20},
-//             {value: 4, books: 44},
-//             {value: 5, books: 33},
-//             {value: 6, books: 35}];
 
 var data = gon.ratingvalues;
 var barWidth = 15;
@@ -54,17 +44,7 @@ var barDemo = d3.select("#ratings").
   text(function(datum) { return datum.value;}).
   attr("fill", "white");
 
-  barDemo.selectAll("text.yAxis").
-  data(data).
-  enter().append("svg:text").
-  attr("x", function(datum, index) { return x(index) + barWidth; }).
-  attr("y", height).
-  attr("dx", -barWidth/2).
-  attr("text-anchor", "middle").
-  attr("style", "font-size: 8; font-family: Helvetica, sans-serif").
-  text(function(datum) { return datum.id;}).
-  attr("transform", "translate(0, 18)").
-  attr("class", "yAxis");
+ 
 
   </script>
 
