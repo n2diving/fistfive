@@ -1,0 +1,2 @@
+class DQuery < User
+end

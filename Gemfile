@@ -35,7 +35,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 #D3.js
-gem 'd3js-rails', '~> 3.1.6'
+gem 'd3_rails'
 
 group :development, :test do
 gem 'rspec-rails', '~> 3.0.0'

@@ -9,12 +9,19 @@ class LessonsController < ApplicationController
 	end
 
 	def show
-
 		@lesson = Lesson.find(params[:id])
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
 		#to pass values back to view
 		# gon.jbuilder
+		
+		@ratingvalues = Rating.all
+
+		gon.watch.ratingvalues = @ratingvalues
+		@rating_count = @ratings.count
+		gon.watch.rating_count = @rating_count
+
+
 
 	end
 
