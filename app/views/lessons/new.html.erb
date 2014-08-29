@@ -2,7 +2,8 @@
 <%= f.text_field :name, placeholder: "name" %>
 <p><%= f.check_box :is_active, {checked: true} %> Active?</p>
 <% students_array = @students.all.map { |student| [student.name, student.id]} %>
-<%= f.select(:student_ids, students_array) %>
+<%= f.select(:student_id, students_array) %>
+
 <%= f.hidden_field( :instructor_id, value: current_user.id ) %>
 
 <%= f.submit %>

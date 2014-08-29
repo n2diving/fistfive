@@ -36,8 +36,9 @@ class LessonsController < ApplicationController
 
 	def edit
 		@students = Student.all
+		@student = Student.find(params[:id])
 		@lesson = Lesson.find(params[:id])
-
+	
 	end
 
 	def update
