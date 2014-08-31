@@ -7,17 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(type: 'Student', name: 'Robert', password: 'Thompson', password_confirmation: 'Thompson', email: 'RobertWThompson@einrot.com')
-User.create(type: 'Student', name: 'Adam', password: 'Taylor', password_confirmation: 'Taylor', email: 'AdamKTaylor@rhyta.com')
-User.create(type: 'Student', name: 'Renee', password: 'Scott', password_confirmation: 'Scott', email: 'ReneeRScott@gustr.com')
-User.create(type: 'Student', name: 'Grant', password: 'Siders', password_confirmation: 'Siders', email: 'GrantISiders@jourrapide.com')
-User.create(type: 'Student', name: 'Kendra', password: 'Kale', password_confirmation: 'Kale', email: 'KendraBKale@fleckens.hu')
-User.create(type: 'Student', name: 'Jose', password: 'Vogt', password_confirmation: 'Vogt', email: 'JoseDVogt@gustr.com')
-User.create(type: 'Student', name: 'Travis', password: 'Sharp', password_confirmation: 'Sharp', email: 'TravisLSharp@teleworm.us')
-User.create(type: 'Student', name: 'Delila', password: 'Thomas', password_confirmation: 'Thomas', email: 'DelilaMThomas@teleworm.us')
-User.create(type: 'Student', name: 'Thomas', password: 'Coker', password_confirmation: 'Coker', email: 'ThomasNCoker@einrot.com')
-User.create(type: 'Student', name: 'Roger', password: 'Durham', password_confirmation: 'Durham', email: 'RogerRDurham@rhyta.com')
-User.create(type: 'Student', name: 'Dorothy', password: 'Jordan', password_confirmation: 'Jordan', email: 'DorothyPJordan@einrot.com')
+# INSTRUCTORS
+# ==============
+User.create(type: 'Instructor', name: 'Robert', password: 'Thompson', password_confirmation: 'Thompson', email: 'RobertWThompson@einrot.com')
+User.create(type: 'Instructor', name: 'Adam', password: 'Taylor', password_confirmation: 'Taylor', email: 'AdamKTaylor@rhyta.com')
+User.create(type: 'Instructor', name: 'Renee', password: 'Scott', password_confirmation: 'Scott', email: 'ReneeRScott@gustr.com')
+User.create(type: 'Instructor', name: 'Grant', password: 'Siders', password_confirmation: 'Siders', email: 'GrantISiders@jourrapide.com')
+User.create(type: 'Instructor', name: 'Kendra', password: 'Kale', password_confirmation: 'Kale', email: 'KendraBKale@fleckens.hu')
+User.create(type: 'Instructor', name: 'Jose', password: 'Vogt', password_confirmation: 'Vogt', email: 'JoseDVogt@gustr.com')
+User.create(type: 'Instructor', name: 'Travis', password: 'Sharp', password_confirmation: 'Sharp', email: 'TravisLSharp@teleworm.us')
+User.create(type: 'Instructor', name: 'Delila', password: 'Thomas', password_confirmation: 'Thomas', email: 'DelilaMThomas@teleworm.us')
+User.create(type: 'Instructor', name: 'Thomas', password: 'Coker', password_confirmation: 'Coker', email: 'ThomasNCoker@einrot.com')
+User.create(type: 'Instructor', name: 'Roger', password: 'Durham', password_confirmation: 'Durham', email: 'RogerRDurham@rhyta.com')
+User.create(type: 'Instructor', name: 'Dorothy', password: 'Jordan', password_confirmation: 'Jordan', email: 'DorothyPJordan@einrot.com')
+
+
+# STUDENTS
+# ==============
 User.create(type: 'Student', name: 'Judy', password: 'Sapien', password_confirmation: 'Sapien', email: 'JudyHSapien@rhyta.com')
 User.create(type: 'Student', name: 'William', password: 'Cruz', password_confirmation: 'Cruz', email: 'WilliamDCruz@rhyta.com')
 User.create(type: 'Student', name: 'Beatrice', password: 'Hudson', password_confirmation: 'Hudson', email: 'BeatriceKHudson@fleckens.hu')
@@ -107,3 +113,28 @@ User.create(type: 'Student', name: 'Henry', password: 'Landrum', password_confir
 User.create(type: 'Student', name: 'Roxanne', password: 'Armstrong', password_confirmation: 'Armstrong', email: 'RoxanneDArmstrong@einrot.com')
 User.create(type: 'Student', name: 'Matthew', password: 'Looney', password_confirmation: 'Looney', email: 'MatthewNLooney@cuvox.de')
 User.create(type: 'Student', name: 'Christine', password: 'Anderson', password_confirmation: 'Anderson', email: 'ChristineDAnderson@gustr.com')
+
+# LESSONS
+# ===========
+Lesson.create(name: "Test Lesson 1", date: '2014-08-01 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
+Lesson.create(name: "Test Lesson 2", date: '2014-08-02 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
+Lesson.create(name: "Test Lesson 3", date: '2014-08-03 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
+Lesson.create(name: "Test Lesson 4", date: '2014-08-04 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
+
+Lesson.create(name: "Test2 Lesson 1", date: '2014-08-05 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
+Lesson.create(name: "Test2 Lesson 2", date: '2014-08-06 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
+Lesson.create(name: "Test2 Lesson 3", date: '2014-08-07 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
+Lesson.create(name: "Test2 Lesson 4", date: '2014-08-08 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
+
+
+# RATINGS
+# ============
+Rating.create(value: 3, student_id: Student.first.id, lesson_id: Lesson.first.id)
+Rating.create(value: 4, student_id: Student.first.id, lesson_id: Lesson.first.id)
+
+Rating.create(value: 0, student_id: Student.last.id, lesson_id: Lesson.last.id)
+Rating.create(value: 1, student_id: Student.last.id, lesson_id: Lesson.last.id)
+
+Rating.create(value: 2, student_id: Student.first.id, lesson_id: Lesson.last.id)
+Rating.create(value: 5, student_id: Student.last.id, lesson_id: Lesson.first.id)
+

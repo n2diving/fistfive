@@ -25,7 +25,7 @@ class LessonsController < ApplicationController
 
 
 	def new
-		@students = Student.all
+		# @students = Student.all
 		@lesson = Lesson.new
 
 	end
@@ -41,7 +41,7 @@ class LessonsController < ApplicationController
 
 	def edit
 		@students = Student.all
-		@student = Student.find(params[:id])
+		# @student = Student.find(params[:id])
 		@lesson = Lesson.find(params[:id])
 	
 	end
