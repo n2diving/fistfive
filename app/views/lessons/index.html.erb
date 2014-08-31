@@ -11,13 +11,15 @@
 
 <li><h3><%= link_to l.name, lesson_path(l.id) %></h3> </li>
 	<ul>
-		<li> Instructor: <%= l.instructor_id %> </li>
-		<li> 
-			Students:<%= l.students.each do |s| s.id %>
-			<% end %>
-
+		<li>Date: <%= l.date %></li>
+		<li> Instructor: <%= l.instructor.name %> </li>
+		<li>Students:
+			<ul>
+				<%= l.students.each do |s| %>
+				<li> <%= s.name %> </li>
+				<% end %>
+			</ul>
 		</li>
-
 		<li> <%= link_to "edit", edit_lesson_path(l.id) %> | <%= link_to "delete", lesson_path(l.id), method: :delete %></li>
 	</ul>
 

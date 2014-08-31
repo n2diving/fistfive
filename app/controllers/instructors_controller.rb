@@ -1,6 +1,7 @@
 class InstructorsController < UsersController
   def index
     @instructor = User.where(type: 'Instructor')
+    @lessons = Lesson.all
   end
 
   # def new
