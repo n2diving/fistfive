@@ -116,15 +116,15 @@ User.create(type: 'Student', name: 'Christine', password: 'Anderson', password_c
 
 # LESSONS
 # ===========
-Lesson.create(name: "Test Lesson 1", date: '2014-08-01 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
-Lesson.create(name: "Test Lesson 2", date: '2014-08-02 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
-Lesson.create(name: "Test Lesson 3", date: '2014-08-03 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
-Lesson.create(name: "Test Lesson 4", date: '2014-08-04 01:01:01', instructor_id: Instructor.first.id, students_id: [Student.first.id, Student.last.id] )
+Lesson.create(name: "Test Lesson 1", date: '2014-08-01 01:01:01', instructor_id: Instructor.first.id, students: [Student.first, Student.last] )
+Lesson.create(name: "Test Lesson 2", date: '2014-08-02 01:01:01', instructor_id: Instructor.first.id, students: [Student.first, Student.last] )
+Lesson.create(name: "Test Lesson 3", date: '2014-08-03 01:01:01', instructor_id: Instructor.first.id, students: [Student.first, Student.last] )
+Lesson.create(name: "Test Lesson 4", date: '2014-08-04 01:01:01', instructor_id: Instructor.first.id, students: [Student.first, Student.last] )
 
-Lesson.create(name: "Test2 Lesson 1", date: '2014-08-05 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
-Lesson.create(name: "Test2 Lesson 2", date: '2014-08-06 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
-Lesson.create(name: "Test2 Lesson 3", date: '2014-08-07 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
-Lesson.create(name: "Test2 Lesson 4", date: '2014-08-08 01:01:01', instructor_id: Instructor.last.id, students_id: [Student.first.id, Student.last.id])
+Lesson.create(name: "Test2 Lesson 1", date: '2014-08-05 01:01:01', instructor_id: Instructor.last.id, students: [Student.first, Student.last])
+Lesson.create(name: "Test2 Lesson 2", date: '2014-08-06 01:01:01', instructor_id: Instructor.last.id, students: [Student.first, Student.last])
+Lesson.create(name: "Test2 Lesson 3", date: '2014-08-07 01:01:01', instructor_id: Instructor.last.id, students: [Student.first, Student.last])
+Lesson.create(name: "Test2 Lesson 4", date: '2014-08-08 01:01:01', instructor_id: Instructor.last.id, students: [Student.first, Student.last])
 
 
 # RATINGS

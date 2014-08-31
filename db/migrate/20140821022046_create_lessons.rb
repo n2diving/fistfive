@@ -5,7 +5,7 @@ class CreateLessons < ActiveRecord::Migration
       t.datetime :date
       t.string :notes
       t.references :instructor, index: true
-      t.references :students, index: true
+      # t.references :students, index: true
       t.boolean :is_active { default: true }
       # t.string :questions, array: true, default: []
       

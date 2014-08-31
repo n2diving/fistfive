@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if user.authenticate(params[:user][:password])
       session[:user_id] = user.id.to_s
       if user.type == "Student"
-        redirect_to lessons_path
+        redirect_to students_path
       else
         redirect_to instructors_path
       end
