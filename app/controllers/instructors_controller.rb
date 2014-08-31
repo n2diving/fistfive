@@ -1,6 +1,7 @@
 class InstructorsController < UsersController
-  # def index
-  # end
+  def index
+    @instructor = User.where(type: 'Instructor')
+  end
 
   # def new
   # end
