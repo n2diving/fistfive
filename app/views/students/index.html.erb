@@ -1,2 +1,21 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<div class="container-fluid">
+
+<h1>Students Home Page</h1>
+
+<table class="table table-striped table-hover">
+	<tr>
+		<td>Name</td>
+		<td>Date</td>
+		<td>Active Status</td>
+	</tr>
+	<% @lessons.each do |l| %>
+	<tr>
+		<td><%= l.students.where(Student.last) %></td>
+		<td><%#= l.date %></td>
+		<td><%#= l.is_active %></td>
+	</tr>
+	<% end %>
+
+</table>
+
+</div>

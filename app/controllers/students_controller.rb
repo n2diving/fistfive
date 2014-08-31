@@ -1,6 +1,8 @@
 class StudentsController < UsersController
-  # def index
-  # end
+  def index
+    @student = current_user
+    @lessons = Lesson.where(params[:id])
+  end
 
   # def new
   # end

@@ -27,18 +27,15 @@ ActiveRecord::Schema.define(version: 20140831201151) do
     t.datetime "date"
     t.string   "notes"
     t.integer  "instructor_id"
-    t.integer  "students_id"
-    t.boolean  "is_active"
+    t.boolean  "is_active",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "lessons", ["instructor_id"], name: "index_lessons_on_instructor_id", using: :btree
-  add_index "lessons", ["students_id"], name: "index_lessons_on_students_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "value"
-    t.text     "question"
     t.integer  "student_id"
     t.integer  "lesson_id"
     t.datetime "created_at"
