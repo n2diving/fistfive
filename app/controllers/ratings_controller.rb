@@ -2,7 +2,7 @@ class RatingsController < ApplicationController
 	def create
 	
 		Rating.create(rating_params)
-		
+		redirect_to :back
 	end
 
 protected
