@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829220007) do
+ActiveRecord::Schema.define(version: 20140831201151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,12 @@ ActiveRecord::Schema.define(version: 20140829220007) do
     t.datetime "date"
     t.string   "notes"
     t.integer  "instructor_id"
-    t.integer  "student_id"
-    t.boolean  "is_active"
+    t.boolean  "is_active",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "lessons", ["instructor_id"], name: "index_lessons_on_instructor_id", using: :btree
-  add_index "lessons", ["student_id"], name: "index_lessons_on_student_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "value"
@@ -46,6 +44,16 @@ ActiveRecord::Schema.define(version: 20140829220007) do
 
   add_index "ratings", ["lesson_id"], name: "index_ratings_on_lesson_id", using: :btree
   add_index "ratings", ["student_id"], name: "index_ratings_on_student_id", using: :btree
+
+  create_table "student_lessons", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "student_lessons", ["lesson_id"], name: "index_student_lessons_on_lesson_id", using: :btree
+  add_index "student_lessons", ["student_id"], name: "index_student_lessons_on_student_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "type"
