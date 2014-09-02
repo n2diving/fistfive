@@ -1,6 +1,6 @@
 
 <p>Data View</p>
-
+test
 
 
 <p>Count <%= @rating_count %> </p>
@@ -8,10 +8,10 @@
  var data = gon.ratingvalues;
 var ratingcount = gon.rating_count;
 var barWidth = 15;
-var width = (barWidth + 4) * ratingcount;
+var width = 800;
 var height = 200;
 
-var x = d3.scale.linear().domain([0, ratingcount + 2]).range([0, ratingcount * barWidth]);
+var x = d3.scale.linear()
 var y = d3.scale.linear().domain([0, 5]).range([0, 180]);
 
 // add the canvas to the DOM
@@ -43,6 +43,8 @@ var barDemo = d3.select("#ratings").
   attr("style", "font-size: 8; font-family: Helvetica, sans-serif").
   text(function(datum) { return datum.value;}).
   attr("fill", "white");
+
+
 </script>
 
 </div>

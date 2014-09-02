@@ -16,9 +16,6 @@ class LessonsController < ApplicationController
 		@ratingvalues = @lesson.ratings
 
 		gon.watch.ratingvalues = @ratingvalues
-		@rating_count = @ratings.count
-		gon.watch.rating_count = @rating_count
-
 
 
 	end
