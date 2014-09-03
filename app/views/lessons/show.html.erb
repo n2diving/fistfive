@@ -7,19 +7,22 @@
 
 <div class="col-md-4">
 <p> Vote 0 to 5 </p>
+
 <%= form_for @rating do |f| %>
 
 <%= f.number_field :value %>
 <%= f.hidden_field :student_id, value: current_user.id %>
-<%#= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
 <%= f.submit %>
 <% end %>
 
 </div>
+
 
 <hr/>
 
 <div class="col-md-12">
 
 <%= render 'dataview1' %>
+
 </div>
