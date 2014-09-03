@@ -12,8 +12,12 @@ class Lesson < ActiveRecord::Base
 
 
  def class_avg
-	
-		
+
+
+  # this averages the total ratings for the class
+  avg = ratings.average :value
+  avg.to_f
+  
 
 	end
 
