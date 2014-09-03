@@ -4,15 +4,15 @@
 
 <table class="table table-striped table-hover">
 	<tr>
-		<td>Name</td>
+		<td>Lesson Name</td>
+		<td>Instructor</td>
 		<td>Date</td>
-		<td>Active Status</td>
 	</tr>
 	<% @lessons.each do |l| %>
 	<tr>
-		<td><%= l.students.where(Student.last) %></td>
-		<td><%#= l.date %></td>
-		<td><%#= l.is_active %></td>
+		<td><%= link_to l.name, lesson_path(l.id) %></td>
+		<td><%= l.instructor.name %></td>
+		<td><%= l.date.strftime "%d-%m-%Y" %></td>
 	</tr>
 	<% end %>
 
