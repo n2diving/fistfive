@@ -1,24 +1,25 @@
 <p>Data View</p>
 
 
-  <svg id="Aratings">
+<svg id="Aratings">
 </svg>
 
 
 <p>Count <%= @rating_count %> </p>
 <script>
 
-var data = gon.ratings;
-
+var data = gon.studentcounts;
+var student_count = gon.students
 
 
 var barWidth = 15;
-var width = data.length * (barWidth + 6);
+var width = 400;
 var height = 100;
 
 
-var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
+var x = d3.scale.linear().domain([1, data.length]).range([0, width]);
 var y = d3.scale.linear().domain([0, 5]).range([10, height]);
+
 
 // add the canvas to the DOM
 var barDemo = d3.select("#Aratings").

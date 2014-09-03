@@ -13,10 +13,14 @@ class LessonsController < ApplicationController
 		@lesson = Lesson.find(params[:id])
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
-	
 		@ratingvalues = @lesson.ratings
 
+		@studentcounts = @lesson.student_counts
+
+		gon.watch.studentcounts = @studentcounts
+
 		gon.watch.ratings = @ratingvalues
+		
 
 
 	end
@@ -32,7 +36,7 @@ class LessonsController < ApplicationController
 		@lesson = Lesson.new lesson_params 
 		@lesson.instructor_id = current_user.id
 		if @lesson.save
-			redirect_to lessons_path
+			redirect_to instructors_path
 		else 
 			render 'new'
 		end
@@ -48,7 +52,7 @@ class LessonsController < ApplicationController
 	def update
 		@lesson = Lesson.find(params[:id])
 		if @lesson.update(lesson_params)
-			redirect_to lessons_path
+			redirect_to instructors_path
 		else
 			render 'edit'
 		end
@@ -59,7 +63,7 @@ class LessonsController < ApplicationController
 	def destroy
 		@lesson = Lesson.find(params[:id])
 		@lesson.destroy
-		redirect_to lessons_path
+		redirect_to instructors_path
 	end
 protected
 	def lesson_params
