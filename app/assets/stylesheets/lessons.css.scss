@@ -11,13 +11,22 @@
 .svg {
   width: auto;
 }
-.axis path,
+
 .axis line {
-  fill: none;
+  
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
 .area {
   fill: steelblue;
+}
+
+.axis path {
+  display: none;
+}
+
+.axis .minor line {
+  stroke: #777;
+  stroke-dasharray: 2,2;
 }
