@@ -15,7 +15,7 @@
 		<li> Instructor: <%= l.instructor.name %> </li>
 		<li>Students:
 			<ul>
-				<%= l.students.each do |s| %>
+				<% l.students.each do |s| %>
 				<li> <%= s.name %> </li>
 				<% end %>
 			</ul>
