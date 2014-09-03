@@ -7,12 +7,17 @@
 		<td>Name</td>
 		<td>Date</td>
 		<td>Active Status</td>
+		<td>Students</td>
 	</tr>
 	<% @lessons.each do |l| %>
 	<tr>
-		<td><%= l.name %></td>
+		<td><%=link_to l.name, lesson_path(l.id) %></td>
 		<td><%= l.date %></td>
 		<td><%= l.is_active %></td>
+		<td><% l.students.each do |s| %>
+				<%= s.name %>
+				<% end %>
+		</td>
 	</tr>
 	<% end %>
 
