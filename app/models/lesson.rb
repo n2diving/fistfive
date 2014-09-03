@@ -7,5 +7,15 @@ class Lesson < ActiveRecord::Base
   has_many :ratings
   has_many :student_lessons
   has_many :students, through: :student_lessons
+
+
+
+
+ def class_avg
+	
+		
+
+	end
+
   
 end

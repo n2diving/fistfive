@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
 	end
 
 	def show
+		
 		@lesson = Lesson.find(params[:id])
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
