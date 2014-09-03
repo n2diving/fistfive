@@ -1,24 +1,32 @@
 <div class="container-fluid">
 
 <h1>Instructors Home Page</h1>
-
+<p> <%= link_to "New Lesson", new_lesson_path %> </p>
 <table class="table table-striped table-hover">
 	<tr>
-		<td>Name</td>
-		<td>Date</td>
-		<td>Active Status</td>
-		<td>Students</td>
+		<td><strong>Lesson Name</strong></td>
+		<td><strong>Date</strong></td>
+		<td><strong>Status</strong></td>
+		<td><strong>Students</strong></td>
 	</tr>
+
 	<% @lessons.each do |l| %>
 	<tr>
-		<td><%=link_to l.name, lesson_path(l.id) %></td>
-		<td><%= l.date %></td>
-		<td><%= l.is_active %></td>
+		<td><%=link_to l.name, lesson_path(l.id) %> | <%= link_to "x", lesson_path(l.id), method: :delete %> 
+			<%= link_to "e", edit_lesson_path(l.id)%></td>
+		<td><%= l.created_at.strftime("%_m/%d/%Y - %A ") %></td>
+		<td><% if l.is_active %> 
+			<em><%= "Active" %>
+			<% else %> 
+			<%="Closed" %></em> 
+			<% end %></td>
 		<td><% l.students.each do |s| %>
 				<%= s.name %>
 				<% end %>
 		</td>
+		
 	</tr>
+
 	<% end %>
 
 </table>

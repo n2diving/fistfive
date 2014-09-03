@@ -28,5 +28,11 @@ def value_counts
 
 end
 
+def student_counts
+ stu_counts = []
+ for ratings.student_id.each do |r|
+  p.value
+end
+
   
 end

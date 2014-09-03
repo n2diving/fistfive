@@ -1,11 +1,12 @@
+
+<div class="container">
+<h1> Create a Lesson </h1>
 <%= form_for @lesson do |f| %>
-<%= f.text_field :name, placeholder: "name" %>
-<!-- <p><%#= f.check_box :is_active, {checked: true} %> Active?</p> -->
-<%# students_array = @students.all.map { |student| [student.name, student.id]} %>
-<%#= f.select(:student_id, students_array) %>
-
-<%#= f.hidden_field( :instructor_id, value: current_user.id ) %>
-
+<%= f.text_field :name, placeholder: "Lesson Title", size:60 %>
+<%#= f.check_box :is_active, {checked: true} %> 
+<%= f.hidden_field( :instructor_id, value: current_user.id ) %>
 <%= f.submit %>
 <% end %>
-<%= link_to "back", lessons_path %>
+<%= link_to "back", instructors_path %>
+
+</div>
