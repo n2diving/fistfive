@@ -1,2 +1,72 @@
-<h1>Instructors#new</h1>
-<p>Find me in app/views/instructors/new.html.erb</p>
+<div class="container-fluid">
+
+
+<div class="row">
+  <div class="col-xs-8 col-sm-6 col-xs-offset-1 col-sm-offset-3 col-md-6 col-md-offset-2">
+    <div class='form-container'>
+      <form class="form-horizontal">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Instructor Sign Up</legend>
+
+          <%= form_for @user do |f| %>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Instructor Name</label>  
+            <div class="col-md-8">
+              <%= f.text_field :name, placeholder:"Name", autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Email</label>  
+            <div class="col-md-8">
+              <%= f.text_field :email, placeholder:"Email", class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Password</label>  
+            <div class="col-md-8">
+              <%= f.password_field :name, placeholder:"Password", class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Confirm Password</label>  
+            <div class="col-md-8">
+              <%= f.password_field :name, placeholder:"Confirm Password", class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <!-- Select Basic -->
+<!--           <div class="form-group">
+            <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+            <div class="col-md-8">
+              <select id="selectbasic" name="selectbasic" class="form-control">
+                <option value="1">Option one</option>
+                <option value="2">Option two</option>
+              </select>
+            </div>
+          </div> -->
+
+          <!-- Button (Double) -->
+          <div class="form-group">
+            <div class="col-md-4 control-label" for="button1id"></div>
+            <div class="col-md-8">
+              <%= f.submit "Instructor Sign Up", class: 'btn btn-info' %>
+              <%= link_to "Not an Instructor?", new_instructor_path, class: 'btn btn-primary pull-right' %>
+            </div>
+          </div>
+          <% end %>
+
+
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>

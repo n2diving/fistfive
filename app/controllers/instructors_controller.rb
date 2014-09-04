@@ -3,11 +3,24 @@ class InstructorsController < UsersController
     @lessons = Lesson.where(instructor_id: current_user.id)
   end
 
-  # def new
-  # end
+  def new
+    @user = Instructor.new
+    @is_signup = true
+    if current_user
+      redirect to instructors_path
+    end
+  end
 
-  # def create
-  # end
+  def create
+    @user = Instructor.new(user_params)
+
+    if @user.save
+      session[:user_id] = @user.id.to_s
+      redirect_to instructors_path
+    else
+      redirect_to new_user_path
+    end
+  end
 
   def edit
     @user = User.find(params[:id])

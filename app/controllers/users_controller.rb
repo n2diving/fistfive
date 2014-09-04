@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id.to_s
       if @user.type == "Student"
-        redirect_to users_path
+        redirect_to students_path
       else
         redirect_to instructors_path
       end
