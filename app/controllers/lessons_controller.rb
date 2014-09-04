@@ -15,6 +15,7 @@ class LessonsController < ApplicationController
 		@rating = Rating.new 
 		@ratingvalues = @lesson.ratings
 
+		gon.watch.students = @lesson.students
 		gon.watch.ratings = @ratingvalues
 
 
