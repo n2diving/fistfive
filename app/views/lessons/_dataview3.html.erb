@@ -1,9 +1,10 @@
+
 <p>Data View</p>
 
-
+<div class="container">
 <svg id="Aratings">
 </svg>
-
+</div>
 
 <p>Count <%= @lesson.students.count %> </p>
 <p>Ratings Total <%= @lesson.ratings.count %> </p>
@@ -15,7 +16,9 @@ var data = gon.ratings
 var student_count = gon.students
 
 
-var barWidth = 15;
+var margin = {top: 5, right: 10, bottom: 20, left: 10};
+
+var barWidth = 30;
 var width = 800;
 var height = 400;
 
@@ -23,27 +26,25 @@ var height = 400;
 var x = d3.scale.linear().domain([0, student_count.length]).range([0, width]);
 var y = d3.scale.linear().domain([0, 5]).range([0, height]);
 
-
 // add the canvas to the DOM
 var barDemo = d3.select("#Aratings").
-  append("svg:svg").
-  attr("width", width).
-  attr("height", height);
+  append("svg").
+  attr("width", width + margin.left + margin.right).
+  attr("height", height + margin.top + margin.bottom);
 
-  barDemo.selectAll("rect").
+
+barDemo.selectAll("rect").
   data(data).
   enter().
-  append("svg:rect").
+  append("rect").
   attr("x", function(datum, index) { return x(index); }).
   attr("y", function(datum) { return height - y(datum.value); }).
-  attr("class", "yAxis").
   attr("height", function(datum) { return y(height); }).
   attr("width", barWidth).
   attr("fill", "#2d578b");
 
 
-
-  barDemo.selectAll("text").
+barDemo.selectAll("text").
   data(data).
   enter().
   append("svg:text").
@@ -55,6 +56,11 @@ var barDemo = d3.select("#Aratings").
   attr("style", "font-size: 8; font-family: Helvetica, sans-serif").
   text(function(datum) { return datum.value;}).
   attr("fill", "white");
+
+
+
+
+
 
 
   </script>
