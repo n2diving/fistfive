@@ -4,11 +4,24 @@ class StudentsController < UsersController
     @lessons = Lesson.where(params[:id])
   end
 
-  # def new
-  # end
+  def new
+    @user = Student.new
+    @is_signup = true
+    if current_user
+      redirect to students_path
+    end
+  end
 
-  # def create
-  # end
+  def create
+    @user = Student.new(user_params)
+
+    if @user.save
+      session[:user_id] = @user.id.to_s
+      redirect_to students_path
+    else
+      redirect_to new_user_path
+    end
+  end
 
   def edit
     @user = User.where(params[:id]).first
