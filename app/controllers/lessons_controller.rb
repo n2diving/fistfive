@@ -11,9 +11,9 @@ class LessonsController < ApplicationController
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
 		@ratingvalues = @lesson.ratings
-
 		gon.watch.students = @lesson.students
 		gon.watch.ratings = @ratingvalues
+		
 
 
 	end

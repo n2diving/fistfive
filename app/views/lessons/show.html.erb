@@ -27,15 +27,8 @@
 </div>
 
 
-<div class="col-md-4">
-<p> Students Here </p>
-<ul>
-<% @lesson.ratings.each do |s| %>
 
-<li><%= Student.find(s.student_id).name %></li>
 
-<% end %>
-</ul>
 <%#= form_for @lesson do |f|	 %>
 <%# f.hidden_field :students, value: current_user %>
 <%#= f.submit "Join This Lesson" %>
