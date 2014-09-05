@@ -12,7 +12,7 @@ json.students lesson.students do |s|
 	
 	end
 
-json.rating_tally lesson.value_counts
+json.rating_tally lesson.value_counts 
 json.rating_list lesson.ratings do |rating|
 	
 	json.creator rating.student_id

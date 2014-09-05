@@ -23,14 +23,14 @@ var width = 800;
 var height = 400;
 
 
-var x = d3.scale.linear().domain([0, student_count.length]).range([0, width]);
-var y = d3.scale.linear().domain([0, 5]).range([0, height]);
+var x = d3.scale.linear().domain([0, data.length]).range([10, width]);
+var y = d3.scale.linear().domain([0, 5]).range([10, height]);
 
 // add the canvas to the DOM
 var barDemo = d3.select("#Aratings").
   append("svg").
-  attr("width", width + margin.left + margin.right).
-  attr("height", height + margin.top + margin.bottom);
+  attr("width", width).
+  attr("height", height);
 
 
 barDemo.selectAll("rect").

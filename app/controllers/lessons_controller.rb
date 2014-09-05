@@ -13,8 +13,8 @@ class LessonsController < ApplicationController
 		@ratingvalues = @lesson.ratings
 		gon.watch.students = @lesson.students
 		gon.watch.ratings = @ratingvalues
-		
-
+				
+		gon.jbuilder
 
 	end
 
