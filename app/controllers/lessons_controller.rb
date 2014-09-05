@@ -3,20 +3,17 @@ class LessonsController < ApplicationController
 	def index
 	
 		  @lessons = Lesson.all
-
-		  gon.jbuilder
 	
 	end
 
 	def show
-		
 		@lesson = Lesson.find(params[:id])
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
 		@ratingvalues = @lesson.ratings
 
+		gon.watch.students = @lesson.students
 		gon.watch.ratings = @ratingvalues
-
 
 
 	end
