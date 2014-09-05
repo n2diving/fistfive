@@ -5,7 +5,7 @@ class StudentsController < UsersController
   end
 
   def new
-    @user = Student.new
+    @user = User.new
     @is_signup = true
     if current_user
       redirect_to students_path
@@ -13,7 +13,7 @@ class StudentsController < UsersController
   end
 
   def create
-    @user = Student.new(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       session[:user_id] = @user.id.to_s
