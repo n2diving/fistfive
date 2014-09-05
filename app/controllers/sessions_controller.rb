@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
     user = User.where(:email => params[:user][:email]).first
     if user.authenticate(params[:user][:password])
       session[:user_id] = user.id.to_s
-      if user.type == "Student"
-        redirect_to students_path
-      else
-        redirect_to instructors_path
-      end
-    else
-      redirect_to new_session_path
+    #   if user.type == "Student"
+    #     redirect_to students_path
+    #   else
+    #     redirect_to instructors_path
+    #   end
+    # else
+    #   redirect_to new_session_path
     end
   end
 
