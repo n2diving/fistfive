@@ -51,7 +51,7 @@ class LessonsController < ApplicationController
 		end
 	end
 
-	
+	 
 
 	def destroy
 		@lesson = Lesson.find(params[:id])
@@ -60,7 +60,7 @@ class LessonsController < ApplicationController
 	end
 protected
 	def lesson_params
-		params.require(:lesson).permit(:name, :instructor_id, :is_active, :student_id)
+		params.require(:lesson).permit(:name, :instructor_id, :date, :is_active, :student_id)
 	end
 
 end
