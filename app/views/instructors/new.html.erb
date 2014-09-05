@@ -12,6 +12,8 @@
 
           <%= form_for @user do |f| %>
 
+          <%= f.hidden_field( :type, value: "Instructor" ) %>
+
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">Instructor Name</label>  
@@ -57,7 +59,7 @@
             <div class="col-md-4 control-label" for="button1id"></div>
             <div class="col-md-8">
               <%= f.submit "Instructor Sign Up", class: 'btn btn-info' %>
-              <%= link_to "Not an Instructor?", new_instructor_path, class: 'btn btn-primary pull-right' %>
+              <%= link_to "Not an Instructor?", new_student_path, class: 'btn btn-primary pull-right' %>
             </div>
           </div>
           <% end %>

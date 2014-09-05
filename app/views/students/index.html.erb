@@ -12,7 +12,7 @@
 	<tr>
 		<td><%= link_to l.name, lesson_path(l.id) %></td>
 		<td><%= l.instructor.name %></td>
-		<td><%= l.date.strftime "%d-%m-%Y" %></td>
+		<td><%= l.created_at.strftime("%m/%d/%Y") %></td>
 	</tr>
 	<% end %>
 

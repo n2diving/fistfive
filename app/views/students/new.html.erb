@@ -12,6 +12,8 @@
 
           <%= form_for @user do |f| %>
 
+          <%= f.hidden_field( :type, value: "Student" ) %>
+
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">Student Name</label>  
