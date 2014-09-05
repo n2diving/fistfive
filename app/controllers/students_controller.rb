@@ -8,7 +8,7 @@ class StudentsController < UsersController
     @user = User.new
     @is_signup = true
     if current_user
-      redirect to students_path
+      redirect_to students_path
     end
   end
 

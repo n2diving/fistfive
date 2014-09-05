@@ -1,16 +1,14 @@
 class InstructorsController < UsersController
   
   def index
-
     @lessons = Lesson.where(instructor_id: current_user.id)
-    
   end
 
   def new
     @user = User.new
     @is_signup = true
     if current_user
-      redirect to instructors_path
+      redirect_to instructors_path
     end
   end
 
