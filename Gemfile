@@ -42,7 +42,7 @@ gem 'rspec-rails', '~> 3.0.0'
 end
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,6 +50,9 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails_12factor'
+# because heroku
+gem 'rails_12factor', group: :production
 
 gem 'gon'
+
+ruby "2.1.2"
