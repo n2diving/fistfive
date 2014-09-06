@@ -6,4 +6,6 @@ class DQueriesController < ApplicationController
 	from public.ratings"
 	end
 
+
+
 end
