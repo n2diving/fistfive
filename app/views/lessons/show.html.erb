@@ -1,49 +1,60 @@
 
-<%= @SQLratings %>
+<% @SQLratings %>
 
 <hr />
 
-<%= @ratingvalues %>
+<% @ratingvalues %>
 
 <div class="col-md-12">
 <%= @lesson.name %>
 <hr/>
 </div>
 
-<div class="col-md-4">
-<p> Vote 0 to 5 </p>
 
+<div class="col-md-1">
 <%= form_for @rating do |f| %>
-
-<%= f.number_field :value %>
+<%= f.hidden_field :value, value: 5 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit %>
+<%= f.submit "5" %>
+<% end %>
+<%= form_for @rating do |f| %>
+<%= f.hidden_field :value, value: 4 %>
+<%= f.hidden_field :student_id, value: current_user.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.submit "4" %>
+<% end %>
+<%= form_for @rating do |f| %>
+<%= f.hidden_field :value, value: 3 %>
+<%= f.hidden_field :student_id, value: current_user.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.submit "3" %>
+<% end %>
+<%= form_for @rating do |f| %>
+<%= f.hidden_field :value, value: 2 %>
+<%= f.hidden_field :student_id, value: current_user.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.submit "2" %>
+<% end %>
+<%= form_for @rating do |f| %>
+<%= f.hidden_field :value, value: 1 %>
+<%= f.hidden_field :student_id, value: current_user.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.submit "1" %>
+<% end %>
+<%= form_for @rating do |f| %>
+<%= f.hidden_field :value, value: 0 %>
+<%= f.hidden_field :student_id, value: current_user.id %>
+<%= f.hidden_field :lesson_id, value: @lesson.id %>
+<%= f.submit "0" %>
 <% end %>
 
 </div>
 
+<div class="col-md-11">
 
-<hr/>
+<%= render 'dataview3' %>
 
-<div class="col-md-12">
-
-<%= render 'dataview1' %>
 
 </div>
 
-
-<div class="col-md-4">
-<p> Students Here </p>
-<ul>
-<%# @lesson.ratings.each do |s| %>
-
-<li><%#= Student.find(s.student_id).name %></li>
-
-<%# end %>
-</ul>
-<%#= form_for @lesson do |f|	 %>
-<%# f.hidden_field :students, value: current_user %>
-<%#= f.submit "Join This Lesson" %>
-<%# end %>
-</div>
