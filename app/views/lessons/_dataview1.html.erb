@@ -6,36 +6,29 @@
 
 <script>
 
-// var data = gon.ratings;
+var dataset = gon.ratings;
 
 
-var data;
+// var dataset = d3.json('1.json');
+ 
 
-
-d3.json('10.json', function(d){
-  data = d.rating_list
-  return data.length;
-});
-
-console.log(data.length);
 
 var width = 1000;
 var height = 300;
-var barWidth = width / 6;
+var barWidth = 15;
 
-var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
+var x = d3.scale.linear().range([0, width]);
 var y = d3.scale.linear().domain([0, 5]).range([0, height]);
 
 var margin = {top: 5, right: 10, bottom: 25, left: 25}
 
 // add the canvas to the DOM
-var barDemo = d3.select("#Aratings").
+var barDemo = d3.selectAll("svg").
+data(dataset).
 attr("width", width);
 
-barDemo.selectAll("g").
-  data(data).
-  enter().
-  append("svg:rect").
+barDemo.
+  append("g").
   attr("x", function(datum, index) { return x(index); }).
   attr("y", function(datum) { return height - y(datum); }).
   attr("height", y(height + margin.bottom) ).
