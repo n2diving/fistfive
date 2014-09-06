@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @is_signup = true
-    if current_user
-      redirect to users_path
-    end
+    # if current_user
+    #   redirect to users_path
+    # end
   end
 
   def index
@@ -30,11 +30,11 @@ class UsersController < ApplicationController
   # end
 
   def create
-    # if params[:form_tag] == "Student"
-    #   @user = Student.new(user_params)
-    # else
-    #   @user = Instructor.new(user_params)
-    # end
+    if params[:form_tag] == "Student"
+      @user = Student.new(user_params)
+    else
+      @user = Instructor.new(user_params)
+    end
     if @user.save
       session[:user_id] = @user.id.to_s
       if @user.type == "Student"
