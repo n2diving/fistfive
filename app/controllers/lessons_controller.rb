@@ -15,6 +15,7 @@ class LessonsController < ApplicationController
 		gon.watch.students = @lesson.students
 		gon.watch.ratings = @SQLratings
 
+
 	end
 
 
