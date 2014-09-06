@@ -17,4 +17,4 @@
 /vendor
 
 /config/database.yml
-/config/secret_token.rb
+/config/secret_token.rb.env

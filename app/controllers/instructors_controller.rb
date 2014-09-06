@@ -1,12 +1,11 @@
 class InstructorsController < UsersController
+  
   def index
-
     @lessons = Lesson.where(instructor_id: current_user.id)
-    
   end
 
   def new
-    @user = Instructor.new
+    @user = User.new
     @is_signup = true
     if current_user
       redirect_to instructors_path
@@ -14,13 +13,13 @@ class InstructorsController < UsersController
   end
 
   def create
-    @user = Instructor.new(user_params)
+    @user = User.new(user_params)
 
     if @user.save
       session[:user_id] = @user.id.to_s
       redirect_to instructors_path
     else
-      redirect_to new_user_path
+      redirect_to root_path
     end
   end
 
