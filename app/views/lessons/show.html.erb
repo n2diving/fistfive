@@ -1,4 +1,10 @@
 
+<%= @SQLratings %>
+
+<hr />
+
+<%= @ratingvalues %>
+
 <div class="col-md-12">
 <%= @lesson.name %>
 <hr/>
@@ -30,11 +36,11 @@
 <div class="col-md-4">
 <p> Students Here </p>
 <ul>
-<% @lesson.ratings.each do |s| %>
+<%# @lesson.ratings.each do |s| %>
 
-<li><%= Student.find(s.student_id).name %></li>
+<li><%#= Student.find(s.student_id).name %></li>
 
-<% end %>
+<%# end %>
 </ul>
 <%#= form_for @lesson do |f|	 %>
 <%# f.hidden_field :students, value: current_user %>
