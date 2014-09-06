@@ -1,9 +1,7 @@
 class LessonsController < ApplicationController
 
 	def index
-	
 		  @lessons = Lesson.all
-	
 	end
 
 	def show
@@ -11,10 +9,12 @@ class LessonsController < ApplicationController
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
 		@ratingvalues = @lesson.ratings
+
+  	@SQLratings = Rating.find_by_sql("SELECT id, student_id, lesson_id, created_at, value FROM ratings WHERE id IN (SELECT MAX(id) as id FROM ratings GROUP BY student_id) AND lesson_id = #{@lesson.id} ORDER BY value;")
+
 		gon.watch.students = @lesson.students
-		gon.watch.ratings = @ratingvalues
-				
-		gon.jbuilder
+		gon.watch.ratings = @SQLratings
+
 
 	end
 
