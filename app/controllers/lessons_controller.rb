@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
 
 	def index
-		  @lessons = Lesson.all
+		@lessons = Lesson.all
 	end
 
 	def show
@@ -17,11 +17,9 @@ class LessonsController < ApplicationController
 
 	end
 
-
 	def new
 		# @students = Student.all
 		@lesson = Lesson.new
-
 	end
 
 	def create
@@ -38,7 +36,6 @@ class LessonsController < ApplicationController
 		@students = Student.all
 		# @student = Student.find(params[:id])
 		@lesson = Lesson.find(params[:id])
-	
 	end
 
 	def update
@@ -50,13 +47,12 @@ class LessonsController < ApplicationController
 		end
 	end
 
-	 
-
 	def destroy
 		@lesson = Lesson.find(params[:id])
 		@lesson.destroy
 		redirect_to instructors_path
 	end
+	
 protected
 	def lesson_params
 		params.require(:lesson).permit(:name, :instructor_id, :date, :is_active, :student_id)
