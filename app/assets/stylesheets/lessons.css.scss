@@ -4,7 +4,10 @@
 
 #Aratings {
  width: 1000px;
- height: 800px;
+ height: 500px;
+ margin-top: 10px;
+ overflow: visible;
+ padding: 0;
  
 }
 
@@ -18,23 +21,23 @@ path.area {
   fill: #e7e7e7;
 }
 
-.axis {
+axis {
   shape-rendering: crispEdges;
 }
 
-.x.axis line {
+.x axis line {
   stroke: #fff;
 }
 
-.x.axis .minor {
+.x axis .minor {
   stroke-opacity: .5;
 }
 
-.x.axis path {
-  display: none;
+.x axis path {
+ 
 }
 
-.y.axis line, .y.axis path {
+.y axis line, .y axis path {
   fill: none;
   stroke: #000;
 }
