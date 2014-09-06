@@ -16,37 +16,38 @@
 <%= f.hidden_field :value, value: 5 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "5" %>
+<%= f.submit "5", class: "btn-lg" %>
 <% end %>
+
 <%= form_for @rating do |f| %>
 <%= f.hidden_field :value, value: 4 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "4" %>
+<%= f.submit "4", class: "btn-lg"  %>
 <% end %>
 <%= form_for @rating do |f| %>
 <%= f.hidden_field :value, value: 3 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "3" %>
+<%= f.submit "3", class: "btn-lg"  %>
 <% end %>
 <%= form_for @rating do |f| %>
 <%= f.hidden_field :value, value: 2 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "2" %>
+<%= f.submit "2", class: "btn-lg"  %>
 <% end %>
 <%= form_for @rating do |f| %>
 <%= f.hidden_field :value, value: 1 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "1" %>
+<%= f.submit "1", class: "btn-lg"  %>
 <% end %>
 <%= form_for @rating do |f| %>
 <%= f.hidden_field :value, value: 0 %>
 <%= f.hidden_field :student_id, value: current_user.id %>
 <%= f.hidden_field :lesson_id, value: @lesson.id %>
-<%= f.submit "0" %>
+<%= f.submit "0", class: "btn-lg"  %>
 <% end %>
 
 </div>
@@ -57,4 +58,6 @@
 
 
 </div>
-
+<div class="col-md-3">
+<%= render 'individual_student_view' %>
+</div>
