@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @is_signup = true
-    # if current_user
-    #   redirect to users_path
-    # end
+    if current_user
+      redirect to users_path
+    end
   end
 
   def index
