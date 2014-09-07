@@ -1,2 +1,21 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<style>
+.path {
+	border: 1px solid black;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+path.area {
+  fill: #7188e7;
+}
+
+</style>
+
+<h1><%= User.find(@student.id).name %></h1>
+<svg id="studentRatings">
+</svg>
+<%= render "ratingset" %>
