@@ -7,6 +7,8 @@ gem 'rails', '4.1.1'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
+gem 'angularjs-rails'
+
 
 # Use postgresql as the database for Active Record
 gem 'pg'
