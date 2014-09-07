@@ -27,9 +27,11 @@ class StudentsController < UsersController
   #   @user = User.where(params[:id]).first
   # end
 
-  # def show
-  #   @user = User.where(params[:id]).first
-  # end
+  def show
+    
+    @student = Student.find(params[:id])
+    gon.student = @student.ratings
+  end
 
   # def destroy
   #   @user = User.find(params[:id])

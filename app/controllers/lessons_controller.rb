@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
 	end
 
 	def show
+		
 		@lesson = Lesson.find(params[:id])
 		@ratings = Rating.where(lesson_id: @lesson)
 		@rating = Rating.new 
@@ -12,9 +13,8 @@ class LessonsController < ApplicationController
 
   	@SQLratings = Rating.find_by_sql("SELECT id, student_id, lesson_id, created_at, value FROM ratings WHERE id IN (SELECT MAX(id) as id FROM ratings GROUP BY student_id) AND lesson_id = #{@lesson.id} ORDER BY value;")
 
-		gon.watch.students = @lesson.students
+		# gon.watch.students = @Studentratings
 		gon.watch.ratings = @SQLratings
-
 
 	end
 
