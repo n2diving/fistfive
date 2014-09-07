@@ -17,8 +17,6 @@ class LessonsController < ApplicationController
 		gon.watch.ratings = @SQLratings
 	end
 
-	end
-
 	def new
 		# @students = Student.all
 		@lesson = Lesson.new
