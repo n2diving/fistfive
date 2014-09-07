@@ -20,10 +20,13 @@
       <ul class="nav navbar-nav">
 
         <li class="active">
-          <%= link_to 'Students', students_path %>
-        </li>
-        <li class="active">
-          <%= link_to 'Instructors', instructors_path %>
+          <% if current_user %>
+            <% if current_user.type == "Student" %>
+              <%= link_to 'My Dashboard', students_path %>
+            <% else %>
+              <%= link_to 'My Dashboard', instructors_path %>
+            <% end %>
+          <% end %>
         </li>
 
       </ul>
