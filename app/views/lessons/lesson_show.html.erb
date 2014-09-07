@@ -1,0 +1,80 @@
+<div <html ng-app="angularPost">
+  <div ng-controller="postCtrl">
+
+
+
+    <% @SQLratings %>
+
+    <hr />
+
+    <% @ratingvalues %>
+
+    <div class="conatiner-fluid">
+
+      <div class="col-xs-10 col-sm-4 col-sm-offset-4 col-xs-offset-1">
+        <h1><%= @lesson.name %></h1>
+        <hr/>
+      </div>
+
+    <% if current_user.type == "Student" %>
+      <div class="col-md-1">
+
+        <%= form_for @rating do |f| %>
+          <%= f.hidden_field :value, value: 5 %>
+          <%= f.hidden_field :student_id, value: current_user.id %>
+          <%= f.hidden_field :lesson_id, value: @lesson.id %>
+          <%= f.submit "5" %>
+        <% end %>
+
+
+    <input type="hidden"  ng-model="student" value=<%= current_user.id %> />
+    <input type="hidden" ng-model="lesson" value=<%= @lesson.id %> />
+    <button ng-click="rating(4)">4</button>
+
+    <button ng-click="rating(5)">5</button>
+    <button ng-click="rating('<%= current_user.id %>')">anything from the controller</button>
+
+    <button ng-click="rating2">2</button>
+
+      </div>
+    <% end %>
+
+      <div class="col-md-11">
+        <p>Number of Students in Lesson: <%= @lesson.students.count %> </p>
+        <p>Ratings Total: <%= @lesson.ratings.count %> </p>
+
+        <div id="ajax">
+          <%= render 'dataview3' %>
+        </div>
+
+
+        <% if current_user == Instructor %>
+          <p> Students Currently Enrolled </p>
+            <ul>
+              <% @lesson.students.each do |s| %>
+
+              <li><%= s.name %></li>
+
+              <% end %>
+            </ul>
+        <% end %>
+
+        <% if current_user == Student %>
+          <%= form_for @lesson do |f|  %>
+          <% f.hidden_field :students, value: current_user %>
+          <%= f.submit "Join This Lesson" %>
+          <% end %>
+        <% end %>
+
+      </div>
+
+    </div>
+
+
+    <script>
+    $('#ajax').html("<%= escape_javascript(render(:partial => 'lessons/dataview3')).html_safe %>");
+
+    </script>
+
+  </div><!--end of postCtrl-->
+</div><!--end of angularPost-->
