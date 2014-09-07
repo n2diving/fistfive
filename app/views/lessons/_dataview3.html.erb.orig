@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<svg id="Aratings">
+</svg>
+=======
 
 <p>Data View</p>
 
@@ -5,6 +9,7 @@
   <svg id="Aratings">
   </svg>
 </div>
+>>>>>>> 0948b0ac5e65c3980a15e658e4378a8813fb157d
 
 <script>
 
