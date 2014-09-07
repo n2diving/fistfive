@@ -1,10 +1,5 @@
-
-<p>Data View</p>
-
-<div class="container">
-  <svg id="Aratings">
-  </svg>
-</div>
+<svg id="Aratings">
+</svg>
 
 <script>
 
@@ -49,6 +44,14 @@ function inverse(hex) {
 
   return inverse
 }
+var x = d3.scale.linear().domain([0, data.length]).range([20, width+20]);
+var y = d3.scale.linear().domain([0, 5]).range([12, height]);
+var yScale = d3.scale.linear().domain([0,5]).range([height - 8, 8]);
+// add the canvas to the DOM
+var barDemo = d3.select("#Aratings").
+  append("svg").
+  attr("width", width  + margin.right).
+  attr("height", height +  margin.bottom);
 
 
   barDemo.selectAll("rect").
@@ -81,8 +84,9 @@ function inverse(hex) {
   .tickSubdivide(true)
   .orient("right"); // have the text labels on the left hand side
 
+d3.select("#Aratings")
+.call(yAxis);
 
-  barDemo.call(yAxis);
 
 </script>
 
