@@ -14,9 +14,18 @@ class LessonsController < ApplicationController
 
 		gon.watch.students = @lesson.students
 		gon.watch.ratings = @SQLratings
-
-
 	end
+
+	 def rating
+    puts "!!! POSTING !!!"
+    puts "!!! POSTING !!!"
+    puts "!!! POSTING !!!"
+    puts "!!! POSTING !!!"
+    puts "!!! POSTING !!!"
+    post = params[:post]
+    puts post
+    render json: post
+  end
 
 	def new
 		# @students = Student.all
