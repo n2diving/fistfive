@@ -1,9 +1,19 @@
 class RatingsController < ApplicationController
-	def create
 	
-		Rating.create(rating_params)
-		redirect_to :back
+  def new
+    @rating = Rating.new
+  end
+
+  def create
+		@rating = Rating.new(rating_params)
+    if @rating.save
+      redirect_to :back
+    else
+      redirect_to root_path
+    end
 	end
+
+
 
 protected
 	def rating_params

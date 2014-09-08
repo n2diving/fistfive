@@ -4,8 +4,5 @@ class Rating < ActiveRecord::Base
 
   validates_inclusion_of :value, :in => 0..5
 
-
-
-
 end
 

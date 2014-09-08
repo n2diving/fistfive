@@ -49,7 +49,7 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
-    gon (5.1.2)
+    gon (5.2.0)
       actionpack (>= 2.3.0)
       json
       multi_json
@@ -164,7 +164,7 @@ DEPENDENCIES
   d3_rails
   font-awesome-rails
   font-awesome-sass
-  gon
+  gon (~> 5.2.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg

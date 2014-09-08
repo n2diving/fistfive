@@ -55,6 +55,6 @@ gem 'unicorn'
 # because heroku
 gem 'rails_12factor', group: :production
 
-gem 'gon'
+gem 'gon', '~> 5.2.0'
 
 ruby "2.1.2"

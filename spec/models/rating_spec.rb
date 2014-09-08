@@ -8,4 +8,6 @@ RSpec.describe Rating, :type => :model do
 		expect(rating.value).to be < 5
 		expect(rating.value).to be >= 0
 	end
+
+  
 end
