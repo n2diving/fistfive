@@ -1,11 +1,18 @@
 
-<div class="container">
-<h1> Create a Lesson </h1>
-<%= form_for @lesson do |f| %>
-<%= f.text_field :name, placeholder: "Lesson Title", size:60 %>
-<%= f.hidden_field( :instructor_id, value: current_user.id ) %>
-<%= f.submit %>
-<% end %>
-<%= link_to "back", instructors_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      
+      <h1> Create a Lesson </h1>
 
-</div>
+        <%= form_for @lesson do |f| %>
+          <%= f.text_field :name, placeholder: "Lesson Title", size:60, autofocus: true %>
+          <%= f.hidden_field( :instructor_id, value: current_user.id ) %>
+          <%= f.submit %>
+        <% end %>
+
+        <%= link_to "back", instructors_path %>
+
+    </div><!--end of column-->
+  </div><!--end of row-->
+</div><!--end of container-->
