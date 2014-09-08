@@ -1,15 +1,7 @@
-<h3>Students</h3>
 
+<h3>Active Students</h3>
 <ul>
-  <% @lesson.students.each do |s| %>
-    <li><%= s.name %></li>
-  <% end %>
+<% @SQLratings.each do |s| %>
+<li class="list-group-item"><%= link_to Student.find(s.student_id).name, student_path(s.student_id) %></li>
+<% end %>
 </ul>
-
-<svg id="Aratings">
-</svg>
-
-
-<script>
-</script>
-
