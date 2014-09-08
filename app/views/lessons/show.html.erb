@@ -60,6 +60,7 @@
         <% end %>
       </div>
     <% end %><!--end conditional view on the ratings-->
+  </div><!--end row-->
 
     <% if current_user.type == "Instructor" %>      
       <div class="col-md-3">
@@ -72,3 +73,10 @@
 
 
 </div><!--end container-fluid-->
+
+
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+</script>
