@@ -10,6 +10,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    if current_user
+      if current_user.type == "Student"
+        redirect_to students_path
+      else
+        redirect_to instructors_path
+      end
+    end
   end
 
   # def show

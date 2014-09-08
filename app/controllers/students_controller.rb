@@ -1,8 +1,12 @@
 class StudentsController < UsersController
   
   def index
-    @student = current_user
-    @lessons = Lesson.all
+    if current_user
+      @student = current_user
+      @lessons = Lesson.all
+    else
+      redirect_to root_path
+    end
   end
 
   def new
