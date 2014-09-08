@@ -12,6 +12,12 @@
 
   <div class="row">
     <div class="col-md-9">
+      <%= link_to "back to lessons", users_path, class: "btn btn-info pull-left" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
       <%= render 'dataview3' %>
     </div>
 
@@ -61,6 +67,7 @@
       </div>
     <% end %><!--end conditional view on the ratings-->
   </div><!--end row-->
+
 
     <% if current_user.type == "Instructor" %>      
       <div class="col-md-3">
