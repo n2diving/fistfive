@@ -60,7 +60,7 @@
         <% end %>
       </div>
     <% end %><!--end conditional view on the ratings-->
-  </div><!--end row>
+  </div><!--end row-->
 
 
   <% if current_user.type == "Instructor" %>
@@ -69,3 +69,10 @@
     </div>
   <% end %>
 </div><!--end container-fluid-->
+
+
+<script>
+setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+</script>
