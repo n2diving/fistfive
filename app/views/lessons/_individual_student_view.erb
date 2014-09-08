@@ -1,7 +1,7 @@
 <h3>Active Students</h3>
 <ul>
-<% @SQLratings.each do |s| %>
-<li><%= Student.find(s.student_id).name %></li>
+<% @lesson.students.each do |r| %>
+<li><%= r.name %></li>
 <% end %>
 </ul>
 
