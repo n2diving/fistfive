@@ -1,34 +1,39 @@
 <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 
-<h1>Instructors Home Page</h1>
-<p> <%= link_to "New Lesson", new_lesson_path %> </p>
-<table class="table table-striped table-hover">
-	<tr>
-		<td><strong>Lesson Name</strong></td>
-		<td><strong>Date</strong></td>
-		<td><strong>Status</strong></td>
-		<td><strong>Students</strong></td>
-	</tr>
+			<h1>Instructor Dashboard</h1>
+			<p> <%= link_to "New Lesson", new_lesson_path %> </p>
+			<table class="table table-striped table-hover">
+				<thead>
+					<th><strong>Lesson Name</strong></th>
+					<th><strong>Date</strong></th>
+					<th><strong>Status</strong></th>
+					<th><strong>Students</strong></th>
+				</thead>
 
-	<% @lessons.each do |l| %>
-	<tr>
-		<td><%=link_to l.name, lesson_path(l.id) %> | <%= link_to "x", lesson_path(l.id), method: :delete %> 
-			<%= link_to "e", edit_lesson_path(l.id)%></td>
-		<td><%= l.created_at.strftime("%_m/%d/%Y - %A ") %></td>
-		<td><% if l.is_active %> 
-			<em><%= "Active" %>
-			<% else %> 
-			<%="Closed" %></em> 
-			<% end %></td>
-		<td><% l.students.each do |s| %>
-				<%= s.name %>
+				<% @lessons.each do |l| %>
+				<tr>
+					<td><%=link_to l.name, lesson_path(l.id) %> | <%= link_to "x", lesson_path(l.id), method: :delete %> 
+						<%= link_to "e", edit_lesson_path(l.id)%></td>
+
+					<td><%= l.created_at.strftime("%_m/%d/%Y - %A ") %></td>
+
+					<td>
+						<% if l.is_active %> 
+							<em> Active <% else %> Closed </em> 
+						<% end %></td>
+
+					<td><% l.students.each do |s| %>
+							<%= s.name %>
+							<% end %>
+					</td>
+					
+				</tr>
+
 				<% end %>
-		</td>
-		
-	</tr>
 
-	<% end %>
-
-</table>
-
-</div>
+			</table>
+		</div><!--end table responsive-->
+	</div><!--end column-->
+</div><!--end row-->
