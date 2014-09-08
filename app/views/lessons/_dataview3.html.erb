@@ -75,16 +75,17 @@ var barDemo = d3.select("#Aratings").
     text(function(datum) { return datum.value;}).
     attr("fill", inverse(randomed()));
 
-  yAxis = d3.svg.axis() // generate an axis
-  .scale(yAxis) // set the range of the axis
-  .tickSize(1) // width of the ticks
-  .tickSubdivide(true)
-  .orient("right"); // have the text labels on the left hand side
-yAxis = d3.svg.axis() // generate an axis
-.scale(yScale) // set the range of the axis
-.ticks(5)
-.tickSize(1) // width of the ticks
-.orient("right"); // have the text labels on the left hand side
+  // yAxis = d3.svg.axis() // generate an axis
+  // .scale(yAxis) // set the range of the axis
+  // .tickSize(1) // width of the ticks
+  // .tickSubdivide(true)
+  // .orient("right"); // have the text labels on the left hand side
+  
+    yAxis = d3.svg.axis() // generate an axis
+    .scale(yScale) // set the range of the axis
+    .ticks(5)
+    .tickSize(1) // width of the ticks
+    .orient("right"); // have the text labels on the left hand side
 
 d3.select("#Aratings")
 .call(yAxis);
