@@ -1,30 +1,60 @@
+<div class="container-fluid">
+
 <div class="row">
-  <div class="col-xs-10 col-sm-4 col-xs-offset-3 col-sm-offset-4">
+  <div class="col-xs-8 col-sm-6 col-xs-offset-1 col-sm-offset-3 col-md-6 col-md-offset-2">
     <div class='form-container'>
-      <h1>Instructor Signup</h1>
+      <div class="form-horizontal">
 
-      <%= form_for @user do |f| %>
+        <fieldset>
+          <legend>Instructor Sign Up</legend>
 
-       <div class="form-group">
-          <%= f.text_field :name, placeholder:"Name", autofocus: true %>
-        </div>
-        <div class="form-group">
-          <%= f.text_field :email, placeholder:"Email" %>
-        </div>
-        <div class="form-group">
-          <%= f.password_field :password, placeholder:"Password" %>
-        </div>
-        <div class="form-group">
-          <%= f.password_field :password_confirmation, placeholder:"Confirm Password" %>
-        </div>
-        <!-- Designates user type -->
-        <%= f.hidden_field( :type, value: "Instructor" ) %>
+          <%= form_for @user, :html => {:class => "foo"} do |f| %>
 
-        <div class="form-group">
-          <%= f.submit "Sign Me Up!" %>
-        </div>
-      </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Instructor Name</label>  
+            <div class="col-md-8">
+              <%= f.text_field :name, placeholder:"Name", autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Email</label>  
+            <div class="col-md-8">
+              <%= f.text_field :email, placeholder:"Email", class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Password</label>  
+            <div class="col-md-8">
+              <%= f.password_field :password, placeholder:"Password", class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Confirm Password</label>  
+            <div class="col-md-8">
+              <%= f.password_field :password_confirmation, placeholder:"Confirm Password", class: "form-control input-md" %>
+            </div>
+          </div>
+          
+            <!-- Designates user type -->
+            <%= f.hidden_field( :type, value: "Instructor" ) %>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+              <div class="col-md-4 control-label" for="button1id"></div>
+              <div class="col-md-8">
+                <%= f.submit "Instructor Sign Up", class: 'btn btn-info' %>
+                <%= link_to "Not a Instructor?", new_student_path, class: 'btn btn-primary pull-right' %>
+              </div>
+            </div>
+          
+          </fieldset>
+        </div><!--end form horizontal-->
+      </div><!--end form container-->
 
       <% end %>
   </div><!--end of col-->
 </div><!--end of row-->
+</div><!-- end of fluid container-->

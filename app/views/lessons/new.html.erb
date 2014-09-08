@@ -1,18 +1,54 @@
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+
+<div class="row">
+  <div class="col-xs-8 col-sm-6 col-xs-offset-1 col-sm-offset-3 col-md-6 col-md-offset-2">
+    <div class='form-container'>
+      <div class="form-horizontal">
+
+        <fieldset>
       
-      <h1> Create a Lesson </h1>
+      <legend> Create a Lesson </legend>
 
         <%= form_for @lesson do |f| %>
-          <%= f.text_field :name, placeholder: "Lesson Title", size:60, autofocus: true %>
-          <%= f.hidden_field( :instructor_id, value: current_user.id ) %>
-          <%= f.submit %>
-        <% end %>
 
-        <%= link_to "back", instructors_path %>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Lesson Title</label>  
+            <div class="col-md-8">
+              <%= f.text_field :name, placeholder:"Type Lesson Title Here", autofocus: true, class: "form-control input-md" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Date</label>  
+
+            <div class="col-md-8" data-date="2012-12-21T15:25:00Z">
+              <%= f.text_field :created_at, placeholder:"Date", class: "form-control input-md input-append date form_datetime" %>
+            </div>
+          </div>
+
+
+          <%= f.hidden_field( :instructor_id, value: current_user.id ) %>
+
+          <div class="form-group">
+            <div class="col-md-4 control-label" for="button1id"></div>
+            <div class="col-md-8">
+              <%= f.submit "Create This Lesson", class: 'btn btn-info' %>
+              <%= link_to "Back", instructors_path, class: 'btn btn-primary pull-right' %>
+            </div>
+          </div>
+
+        <% end %>
 
     </div><!--end of column-->
   </div><!--end of row-->
 </div><!--end of container-->
+
+
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - HH:ii P",
+        showMeridian: true,
+        autoclose: true,
+        todayBtn: true
+    });
+</script>  
